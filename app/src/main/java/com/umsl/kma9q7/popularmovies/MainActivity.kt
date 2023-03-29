@@ -1,22 +1,17 @@
 package com.umsl.kma9q7.popularmovies
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.badge.BadgeDrawable
 import com.umsl.kma9q7.popularmovies.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-    var badge: BadgeDrawable? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        var mainViewBinding = ActivityMainBinding.inflate(layoutInflater)
+        val mainViewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainViewBinding.root)
 
         val moviesFragment = MoviesFragment()

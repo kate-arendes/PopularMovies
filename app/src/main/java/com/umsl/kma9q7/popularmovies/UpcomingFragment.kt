@@ -1,11 +1,10 @@
 package com.umsl.kma9q7.popularmovies
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,6 +16,7 @@ class UpcomingFragment: Fragment(R.layout.upcoming_fragment) {
 
         val progressBar = view.findViewById<ProgressBar>(R.id.pbUpcomingProgressBar)
         val spUpcoming = view.findViewById<Spinner>(R.id.spUpcoming)
+        val photo = view.findViewById<ImageView>(R.id.ivUpcomingPhoto)
 
         val request = ServiceBuilder.buildService(TmdbEndpoints::class.java)
         val call = request.getUpcoming(getString(R.string.api_key))
@@ -30,20 +30,20 @@ class UpcomingFragment: Fragment(R.layout.upcoming_fragment) {
                     print(upcomingList.toString())
                     if (upcomingList != null) {
 
-                        var movieNames: MutableList<String> = mutableListOf<String>()
+                        val movieNames: MutableList<String> = mutableListOf()
 
                         for(result in upcomingList.results) {
                             movieNames.add(result.toString())
                         }
 
-
-                        val resultList = listOf(upcomingList.results.toString())
-                        val adapter = context?.let { ArrayAdapter<String>(it, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, movieNames) }
+                        val adapter = context?.let { ArrayAdapter(it, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, movieNames) }
                         spUpcoming.adapter = adapter
 
                         spUpcoming.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
                             override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
                                 context?.let {Toast.makeText(it, "You selected ${adapterView?.getItemAtPosition(position).toString()}", Toast.LENGTH_SHORT).show()}
+
+                                context?.let {Glide.with(it).load("https://image.tmdb.org/t/p/w500${upcomingList.results[position].poster_path}").into(photo)}
                             }
 
                             override fun onNothingSelected(p0: AdapterView<*>?) {

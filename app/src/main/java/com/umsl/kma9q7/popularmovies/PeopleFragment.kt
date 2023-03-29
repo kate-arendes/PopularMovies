@@ -14,9 +14,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PeopleFragment: Fragment(R.layout.people_fragment) {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

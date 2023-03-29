@@ -6,7 +6,8 @@ data class UpcomingMovies(
 )
 
 data class UpcomingResult (
-    val original_title: String
+    val original_title: String,
+    val poster_path: String
 ){
     override fun toString(): String = original_title
 }
