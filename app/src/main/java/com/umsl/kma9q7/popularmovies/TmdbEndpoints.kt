@@ -10,4 +10,7 @@ interface TmdbEndpoints {
 
     @GET("/3/person/popular")
     fun getPeople(@Query("api_key") key: String): Call<PopularPeople>
+
+    @GET("/3/movie/upcoming")
+    fun getUpcoming(@Query("api_key") key: String): Call<UpcomingMovies>
 }
