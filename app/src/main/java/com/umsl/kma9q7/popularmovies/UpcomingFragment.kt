@@ -41,6 +41,17 @@ class UpcomingFragment: Fragment(R.layout.upcoming_fragment) {
                         val adapter = context?.let { ArrayAdapter<String>(it, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, movieNames) }
                         spUpcoming.adapter = adapter
 
+                        spUpcoming.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+                            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                context?.let {Toast.makeText(it, "You selected ${adapterView?.getItemAtPosition(position).toString()}", Toast.LENGTH_SHORT).show()}
+                            }
+
+                            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                            }
+
+                        }
+
                     }
 
 

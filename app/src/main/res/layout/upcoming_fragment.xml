@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MoviesFragment"
+    tools:context=".UpcomingFragment"
     android:background="#121212"
     android:layout_centerHorizontal="true">
 
@@ -12,18 +12,16 @@
         android:id="@+id/tvUpcomingFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoming Fragment"
-        android:textSize="50sp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Upcoming Movies"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
 
     <Spinner
         android:id="@+id/spUpcoming"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/tvUpcomingFragment"
         android:background="@color/white"
 
