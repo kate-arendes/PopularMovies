@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UpcomingFragment"
     android:background="#121212"
     android:layout_centerHorizontal="true">
@@ -14,7 +13,7 @@
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Upcoming Movies"
+        android:text="@string/upcoming_movies"
         android:textColor="@color/white"
         android:textSize="30sp" />
 
@@ -32,7 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/spUpcoming"/>
+        android:layout_below="@+id/spUpcoming"
+        android:contentDescription="@string/upcoming_movie_poster" />
 
     <ProgressBar
         android:id="@+id/pbUpcomingProgressBar"

@@ -20,7 +20,8 @@
                 android:id="@+id/ivPersonPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/profile_image" />
 
             <TextView
                 android:id="@+id/tvPersonTitle"
@@ -29,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:textSize="15sp"
-                android:text="Title: "
+                android:text="@string/name"
                 android:textColor="@color/white"
                 />
 
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:textSize="15sp"
-                android:text="Popularity: "
+                android:text="@string/popularity"
                 android:textColor="@color/white"/>
 
         </RelativeLayout>
